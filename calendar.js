@@ -27,3 +27,17 @@ function ocultarFrase() {
   const modal = document.getElementById('modal');
   modal.style.display = 'none';
 }
+
+// Función para pedir el nombre antes de cargar la página
+function pedirNombre() {
+  const nombre = prompt("Por favor, ingresa tu nombre:");
+  if (nombre) {
+    alert(`¡Hola ${nombre}! Bienvenido al Calendario de Adviento`);
+  } else {
+    alert("Por favor, ingresa un nombre válido para continuar.");
+    pedirNombre(); // Vuelve a pedir el nombre si no se ingresó ninguno
+  }
+}
+
+// Llama a la función al cargar la página
+window.onload = pedirNombre;
